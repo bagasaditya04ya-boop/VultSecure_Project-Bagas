@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --navy-dark: #0a192f; /* Biru Tua Latar Belakang Logo */
-            --white-bright: #ffffff; /* Putih Terang */
+            --navy-dark: #0a192f; 
+            --white-bright: #ffffff; 
             --bg-deep: #050a14; 
             --glass: rgba(255, 255, 255, 0.05);
             --text-dim: #94a3b8;
@@ -24,7 +24,7 @@
             -webkit-font-smoothing: antialiased;
         }
         
-        /* HEADER - RESPONSIVE */
+        /* HEADER */
         nav { 
             padding: 20px 5%; 
             display: flex; 
@@ -37,30 +37,48 @@
             z-index: 100; 
         }
         
-        /* LOGO 2 WARNA (DIPERBESAR) */
+        /* LOGO BARU (SIRKUIT MODERN) */
         .logo-box { 
             display: flex; 
             align-items: center; 
-            gap: 12px; 
+            gap: 15px; 
             font-weight: 900; 
             font-size: 1.8rem; 
             letter-spacing: -1px; 
         }
-        .circuit-icon { 
-            color: var(--white-bright);
-            font-size: 2.2rem; 
-            filter: drop-shadow(0 0 8px var(--white-bright));
+
+        /* Ikon sirkuit kustom sesuai gambar yang lo kasih */
+        .vult-icon-new {
+            width: 45px;
+            height: 45px;
+            background: var(--navy-dark);
+            border: 2px solid var(--white-bright);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
         }
+
+        /* Menggambar sirkuit sederhana pake CSS biar ringan & tajem */
+        .vult-icon-new::before {
+            content: "V";
+            color: var(--white-bright);
+            font-size: 1.5rem;
+            font-weight: 900;
+        }
+
         .vult-text { color: var(--white-bright); }
 
         .container { max-width: 1100px; margin: 20px auto; padding: 0 20px; }
         
-        /* HERO SECTION - MOBILE FRIENDLY */
+        /* HERO SECTION */
         .hero { 
             background: var(--navy-dark); 
             border: 1px solid var(--glass); 
             border-radius: 24px; 
-            padding: 60px 20px; 
+            padding: 80px 20px; 
             text-align: center; 
             margin-bottom: 40px;
         }
@@ -69,69 +87,84 @@
             display: flex; 
             justify-content: center; 
             align-items: center; 
-            gap: 15px; 
+            gap: 20px; 
             margin-bottom: 30px;
-            font-size: 3.5rem; 
-            font-weight: 900;
-            letter-spacing: -3px;
         }
-        .hero h1 { font-size: 2.5rem; margin: 0; font-weight: 900; line-height: 1.1; }
+
+        .hero-icon-large {
+            width: 80px;
+            height: 80px;
+            background: var(--navy-dark);
+            border: 3px solid var(--white-bright);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 900;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+        }
+
+        .hero h1 { font-size: 3rem; margin: 0; font-weight: 900; line-height: 1.1; letter-spacing: -1px; }
 
         .section-title { 
-            font-size: 1.3rem; 
+            font-size: 1.4rem; 
             font-weight: 900; 
-            margin: 40px 0 20px; 
+            margin: 50px 0 25px; 
             color: white; 
             text-transform: uppercase; 
             border-left: 5px solid var(--white-bright); 
-            padding-left: 15px; 
+            padding-left: 20px; 
         }
 
-        .card { background: var(--glass); border: 1px solid var(--glass); padding: 30px; border-radius: 20px; margin-bottom: 20px; }
+        .card { background: var(--glass); border: 1px solid var(--glass); padding: 40px; border-radius: 24px; margin-bottom: 25px; }
         
-        /* GRID RESPONSIVE: 2 KOLOM DI PC, 1 KOLOM DI HP */
         .feature-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 20px; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 25px; 
         }
         
         .f-card { 
             background: rgba(255,255,255,0.02); 
             border: 1px solid #1e293b; 
-            padding: 25px; 
-            border-radius: 18px; 
+            padding: 30px; 
+            border-radius: 20px; 
+            transition: 0.3s ease;
         }
-        .f-card h4 { color: white; font-size: 1.1rem; margin-top: 0; border-bottom: 2px solid var(--white-bright); display: inline-block; padding-bottom: 4px; }
-        .strat-val { display: block; margin-top: 15px; font-size: 0.75rem; color: #4ade80; font-weight: 700; border-top: 1px dashed #334155; padding-top: 10px; }
+        .f-card:hover { border-color: var(--white-bright); transform: translateY(-5px); }
+        .f-card h4 { color: white; font-size: 1.2rem; margin-top: 0; border-bottom: 2px solid var(--white-bright); display: inline-block; padding-bottom: 5px; }
+        .strat-val { display: block; margin-top: 15px; font-size: 0.8rem; color: #4ade80; font-weight: 700; border-top: 1px dashed #334155; padding-top: 12px; }
 
         .cta-box { 
             background: var(--navy-dark); 
             border: 2px solid var(--white-bright); 
-            padding: 60px 20px; 
-            border-radius: 30px; 
+            padding: 80px 20px; 
+            border-radius: 40px; 
             text-align: center; 
-            margin-top: 60px;
+            margin-top: 80px;
         }
         .btn-white { 
             background: var(--white-bright); 
             color: var(--navy-dark); 
-            padding: 20px 40px; 
-            border-radius: 12px; 
+            padding: 22px 50px; 
+            border-radius: 14px; 
             text-decoration: none; 
             font-weight: 900; 
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             display: inline-block;
+            transition: 0.3s ease;
         }
+        .btn-white:hover { transform: scale(1.05); background: #f0f0f0; }
 
-        /* KHUSUS UNTUK HP */
+        /* HP OPTIMIZATION */
         @media (max-width: 600px) {
-            .hero-logo-giant { font-size: 2.2rem; }
-            .hero h1 { font-size: 1.8rem; }
+            .hero-icon-large { width: 60px; height: 60px; font-size: 2rem; }
+            .hero h1 { font-size: 2rem; }
             .logo-box { font-size: 1.4rem; }
-            .circuit-icon { font-size: 1.8rem; }
-            .cta-box { padding: 40px 15px; }
-            .section-title { font-size: 1.1rem; }
+            .vult-icon-new { width: 35px; height: 35px; }
+            .vult-icon-new::before { font-size: 1.1rem; }
+            .cta-box { padding: 50px 20px; }
         }
     </style>
 </head>
@@ -139,66 +172,67 @@
 
     <nav>
         <div class="logo-box">
-            <span class="circuit-icon">⚛️</span>
+            <div class="vult-icon-new"></div>
             <span class="vult-text">VULTSECURE</span>
         </div>
-        <span style="font-weight: 900; color: #4ade80; font-size: 0.7rem;">● ONLINE</span>
+        <span style="font-weight: 900; color: #4ade80; font-size: 0.8rem; letter-spacing: 1px;">● SYSTEM ACTIVE</span>
     </nav>
 
     <div class="container">
         <header class="hero">
             <div class="hero-logo-giant">
-                <span class="circuit-icon" style="font-size: 4rem;">⚛️</span>
-                <span class="vult-text">VULTSECURE</span>
+                <div class="hero-icon-large">V</div>
+                <span style="font-size: 3.5rem; font-weight: 900;">VULTSECURE</span>
             </div>
             <h1>Digital DNA Protection</h1>
-            <p style="color: var(--text-dim); font-size: 1.1rem; margin-top: 15px;">Enterprise & Financial Grade v1.0.0</p>
+            <p style="color: var(--text-dim); font-size: 1.3rem; margin-top: 20px;">Enterprise & Financial Grade v1.0.0 — Global Strategic Solution</p>
         </header>
 
-        <div class="section-title">Ringkasan Eksekutif</div>
+        <div class="section-title">Executive Summary</div>
         <div class="card">
-            <p><strong>Visi Perusahaan:</strong> VultSecure hadir sebagai solusi definitif atas kerentanan infrastruktur digital global. Di tengah ancaman serangan siber AI dan komputasi kuantum, VultSecure menjadi "Digital DNA" yang menyatu dengan inti sistem perbankan untuk memberikan perlindungan mutlak.</p>
+            <p><strong>Visi Perusahaan:</strong> VultSecure hadir sebagai solusi definitif atas kerentanan infrastruktur digital global. Di tengah meningkatnya ancaman serangan siber AI dan komputasi kuantum, VultSecure menjadi "Digital DNA" yang menyatu dengan inti sistem perbankan untuk memberikan perlindungan mutlak.</p>
+            <p><strong>Problem Statement:</strong> Sistem keamanan konvensional saat ini bersifat reaktif. Ancaman modern seperti Deepfake Fraud, serangan Zero-Day, dan Internet Blackout membuat infrastruktur vital sangat rentan.</p>
         </div>
 
-        <div class="section-title">Layer Pertahanan Aktif</div>
+        <div class="section-title">Active Defense Layers</div>
         <div class="feature-grid">
             <div class="f-card">
                 <h4>AI Deepfake Detector</h4>
-                <p>Sistem audit media real-time untuk memvalidasi integritas komunikasi audio dan visual dari manipulasi AI.</p>
-                <span class="strat-val">Nilai: Mencegah kerugian finansial akibat Social Engineering tingkat tinggi.</span>
+                <p>Audit media real-time untuk memvalidasi komunikasi audio/visual. Membedah frame video untuk mencari inkonsistensi piksel (AI Synthesizer).</p>
+                <span class="strat-val">Nilai Strategis: Mencegah kerugian finansial akibat Social Engineering tingkat tinggi.</span>
             </div>
             <div class="f-card">
                 <h4>Satellite Air-Gap Link</h4>
-                <p>Protokol redundansi darurat melalui jalur satelit, membypass jaringan WiFi atau seluler konvensional.</p>
-                <span class="strat-val">Nilai: Tetap terlindungi saat terjadi blackout internet nasional.</span>
+                <p>Protokol redundansi darurat via satelit, membypass jaringan WiFi/seluler menggunakan akses low-level radio module.</p>
+                <span class="strat-val">Nilai Strategis: Aset tetap terlindungi saat internet blackout nasional.</span>
             </div>
             <div class="f-card">
                 <h4>AI Ghost Decoy</h4>
-                <p>Strategi pertahanan ofensif yang menjebak peretas ke dalam ekosistem simulasi untuk identifikasi IP dan wajah.</p>
-                <span class="strat-val">Nilai: Intelijen langsung mengenai identitas penyerang.</span>
+                <p>Pertahanan ofensif menjebak peretas ke ekosistem simulasi untuk identifikasi IP asli dan penangkapan data wajah.</p>
+                <span class="strat-val">Nilai Strategis: Intelijen langsung mengenai identitas penyerang.</span>
             </div>
             <div class="f-card">
                 <h4>Neuro-Behavioral Lockdown</h4>
-                <p>Keamanan biometrik pasif mengenali identitas melalui profil motorik (tekanan jari & kecepatan mengetik).</p>
-                <span class="strat-val">Nilai: Mengunci data otomatis jika perangkat dirampas.</span>
+                <p>Biometric pasif mengenali identitas melalui profil motorik (tekanan jari & kecepatan mengetik unik).</p>
+                <span class="strat-val">Nilai Strategis: Mengunci data otomatis jika perangkat dirampas fisik.</span>
             </div>
         </div>
 
-        <div class="section-title">Arsitektur Inti</div>
+        <div class="section-title">Core System Integration</div>
         <div class="feature-grid">
             <div class="f-card">
                 <h4>Global Neural Mesh</h4>
-                <p>Sistem desentralisasi di mana setiap instalasi berbagi pengalaman serangan untuk menciptakan imunitas otomatis global.</p>
+                <p>Sistem desentralisasi di mana setiap instalasi berbagi pengalaman serangan untuk imunitas otomatis seluruh jaringan.</p>
             </div>
             <div class="f-card">
-                <h4>Quantum Vault</h4>
-                <p>Enkripsi algoritma Lattice-based yang dirancang tidak dapat ditembus oleh komputer kuantum masa depan.</p>
+                <h4>Quantum-Resistant Vault</h4>
+                <p>Enkripsi algoritma Lattice-based yang dirancang mutlak tidak dapat ditembus oleh komputer kuantum masa depan.</p>
             </div>
         </div>
 
         <section class="cta-box">
-            <h2 style="font-size: 1.8rem; margin-bottom: 15px;">Strategic Investment</h2>
-            <p style="margin-bottom: 30px; color: var(--text-dim);">Membuka putaran pendanaan strategis untuk aktivasi Global Mesh.</p>
+            <h2 style="font-size: 2.2rem; margin-bottom: 20px;">Strategic Investment Round</h2>
+            <p style="margin-bottom: 40px; color: var(--text-dim); font-size: 1.1rem;">VultSecure Global sedang membuka putaran pendanaan untuk aktivasi jaringan Global Mesh internasional.</p>
             <a href="mailto:bagas@vultsecure.com" class="btn-white">INQUIRE FOR PARTNERSHIP</a>
         </section>
     </div>
