@@ -7,55 +7,55 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --primary: #ff6154; 
-            --electric-white: #ffffff; /* Warna Putih buat Electro */
-            --dark-bg: #07090d; 
-            --nav-blue: #0a192f; /* Warna Biru Tua buat Latar Belakang Nav */
+            --primary-accent: #ff6154; 
+            --electric-white: #ffffff; 
+            --dark-bg: #05070a; 
+            --nav-blue: #0a192f; /* Deep Midnight Blue for Background */
             --glass: rgba(255, 255, 255, 0.05); 
-            --text-dim: #8a99a8; 
+            --text-dim: #94a3b8; 
         }
         body { background: var(--dark-bg); color: white; font-family: 'Inter', sans-serif; margin: 0; padding-bottom: 100px; line-height: 1.6; }
         
-        /* NAVIGATION WITH DARK BLUE BG */
+        /* NAVIGATION WITH DEEP BLUE BACKGROUND */
         nav { padding: 25px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--glass); background: var(--nav-blue); backdrop-filter: blur(15px); position: sticky; top: 0; z-index: 100; }
         
-        /* STANDAR LOGO VULTSECURE (TIDAK BOLEH HURUF V SAJA) */
+        /* UNIFIED ELECTRO LOGO STYLE - BRIGHT WHITE */
         .logo-text { font-weight: 900; font-size: 1.8rem; letter-spacing: -2px; display: flex; align-items: center; gap: 10px; }
-        .vult { color: #ffffff; }
+        .vult { color: white; }
         .secure-electric {
-            color: var(--electric-white); /* Warna Putih buat Secure */
+            color: var(--electric-white); 
             position: relative;
             text-transform: uppercase;
-            animation: electric-glow 2s infinite;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            animation: electric-glow 1.5s infinite;
         }
-        .circuit-icon { font-size: 1.5rem; filter: drop-shadow(0 0 5px var(--electric-white)); }
+        .circuit-icon { font-size: 1.5rem; filter: drop-shadow(0 0 8px var(--electric-white)); }
 
         @keyframes electric-glow {
-            0% { filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4)); }
-            50% { filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8)); }
-            100% { filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4)); }
+            0%, 100% { opacity: 1; filter: brightness(1.2); }
+            50% { opacity: 0.8; filter: brightness(1); }
         }
 
         .container { max-width: 1000px; margin: 40px auto; padding: 0 25px; }
         
-        /* HERO SECTION WITH COMPLETE LOGO (NO 'V' ICON) */
-        .hero { background: linear-gradient(135deg, rgba(255,97,84,0.1) 0%, rgba(11,14,20,0) 100%); border: 1px solid #2d313f; border-radius: 24px; padding: 50px; display: flex; flex-direction: column; gap: 20px; align-items: center; text-align: center; }
-        
-        /* Bagian Logo Lengkap di dalam Hero */
-        .hero-logo-full { display: flex; align-items: center; gap: 10px; transform: scale(1.2); margin-bottom: 20px; }
+        /* HERO SECTION WITH COMPLETE LOGO */
+        .hero { background: linear-gradient(135deg, rgba(10, 25, 47, 0.8) 0%, rgba(5, 7, 10, 1) 100%); border: 1px solid #1e293b; border-radius: 24px; padding: 60px; display: flex; flex-direction: column; gap: 20px; align-items: center; text-align: center; }
+        .hero-logo-full { display: flex; align-items: center; gap: 10px; transform: scale(1.3); margin-bottom: 30px; }
 
-        .section-title { font-size: 1.4rem; font-weight: 800; margin: 50px 0 20px 0; color: var(--primary); text-transform: uppercase; border-left: 4px solid var(--electric-white); padding-left: 15px; letter-spacing: 1px; }
-        .content-box { background: var(--glass); border: 1px solid var(--glass); padding: 30px; border-radius: 16px; margin-bottom: 20px; }
+        .section-title { font-size: 1.4rem; font-weight: 800; margin: 60px 0 25px 0; color: white; text-transform: uppercase; border-left: 4px solid var(--electric-white); padding-left: 15px; letter-spacing: 2px; }
+        .content-box { background: var(--glass); border: 1px solid var(--glass); padding: 35px; border-radius: 20px; margin-bottom: 25px; }
         .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .feature-card { background: rgba(255,255,255,0.02); border: 1px solid var(--glass); padding: 25px; border-radius: 16px; }
-        .feature-card h4 { color: white; margin: 0 0 10px 0; font-size: 1.1rem; border-bottom: 1px solid var(--primary); display: inline-block; padding-bottom: 5px; }
-        .feature-card p { color: var(--text-dim); font-size: 0.9rem; margin: 5px 0; }
-        .strat-val { color: #4ade80; font-size: 0.8rem; font-weight: bold; margin-top: 10px; display: block; border-top: 1px dashed #334155; padding-top: 10px; }
+        .feature-card { background: rgba(255,255,255,0.01); border: 1px solid #1e293b; padding: 30px; border-radius: 16px; transition: 0.3s; }
+        .feature-card:hover { border-color: var(--electric-white); transform: translateY(-5px); }
+        .feature-card h4 { color: white; margin: 0 0 12px 0; font-size: 1.1rem; border-bottom: 1px solid var(--electric-white); display: inline-block; padding-bottom: 5px; }
+        .feature-card p { color: var(--text-dim); font-size: 0.95rem; margin: 0; }
+        .val-tag { display: block; margin-top: 15px; font-size: 0.8rem; color: #4ade80; font-weight: 700; text-transform: uppercase; border-top: 1px dashed #334155; padding-top: 12px; }
 
-        .cta { text-align: center; margin-top: 80px; padding: 60px; background: #11141b; border-radius: 32px; border: 1px solid var(--glass); }
-        .btn-primary { background: var(--primary); color: white; padding: 20px 45px; border-radius: 12px; text-decoration: none; font-weight: 800; display: inline-block; transition: 0.3s; }
+        .cta { text-align: center; margin-top: 80px; padding: 70px; background: var(--nav-blue); border-radius: 40px; border: 1px solid var(--electric-white); }
+        .btn-primary { background: white; color: black; padding: 22px 55px; border-radius: 12px; text-decoration: none; font-weight: 900; display: inline-block; transition: 0.3s; font-size: 1.1rem; }
+        .btn-primary:hover { background: #e2e8f0; transform: scale(1.05); }
 
-        @media (max-width: 768px) { .feature-grid { grid-template-columns: 1fr; } .logo-text { font-size: 1.4rem; } }
+        @media (max-width: 768px) { .feature-grid { grid-template-columns: 1fr; } .logo-text { font-size: 1.4rem; } .hero { padding: 40px 20px; } }
     </style>
 </head>
 <body>
@@ -64,7 +64,7 @@
             <span class="circuit-icon">⚛️</span>
             <span class="vult">VULT</span><span class="secure-electric">SECURE</span>
         </div>
-        <div style="font-size: 0.7rem; color: #4ade80; font-weight: bold;">● SYSTEM ACTIVE</div>
+        <div style="font-size: 0.75rem; color: #4ade80; font-weight: 900; letter-spacing: 1px;">● SYSTEM ACTIVE</div>
     </nav>
 
     <div class="container">
@@ -74,79 +74,75 @@
                 <span class="vult">VULT</span><span class="secure-electric">SECURE</span>
             </div>
             <div>
-                <h1 style="margin:0; font-size: 2.5rem;">Digital DNA Protection</h1>
-                <p style="color: var(--text-dim); font-size: 1.2rem;">Enterprise & Financial Grade v1.0.0 — Global Strategic Solution</p>
-                <div style="display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; justify-content: center;">
-                    <span style="background:#1e222d; padding:6px 15px; border-radius:8px; font-size:0.8rem; border:1px solid #334155;">QUANTUM-RESISTANT</span>
-                    <span style="background:#1e222d; padding:6px 15px; border-radius:8px; font-size:0.8rem; border:1px solid #334155;">ZERO-CLOUD</span>
-                </div>
+                <h1 style="margin:0; font-size: 3rem; font-weight: 900;">Digital DNA Protection</h1>
+                <p style="color: var(--text-dim); font-size: 1.3rem; margin-top: 15px;">Enterprise & Financial Grade v1.0.0 — Global Strategic Solution</p>
             </div>
         </header>
 
-        <div class="section-title">Executive Summary</div>
+        <div class="section-title">Executive Summary [cite: 5]</div>
         <div class="content-box">
-            <p><strong>Corporate Vision:</strong> VultSecure serves as the definitive solution for global digital infrastructure vulnerabilities. Amidst rising AI-powered cyber threats and quantum computing, VultSecure is a "Digital DNA" that integrates with banking cores and high-risk data to provide absolute protection.</p>
-            <p><strong>Problem Statement:</strong> Conventional security systems are reactive and highly dependent on stable internet connectivity. Modern threats such as Deepfake Fraud, Zero-Day attacks, and national internet blackouts leave vital infrastructure extremely vulnerable.</p>
+            <p><strong>Corporate Vision:</strong> VultSecure serves as the definitive solution for global digital infrastructure vulnerabilities[cite: 7, 8]. Amidst rising AI-powered cyber threats and quantum computing, it is a "Digital DNA" that integrates with banking cores and high-risk data to provide absolute protection[cite: 8].</p>
+            <p><strong>Problem Statement:</strong> Conventional security systems are reactive and highly dependent on stable internet connectivity[cite: 10]. Modern threats such as Deepfake Fraud, Zero-Day attacks, and national internet blackouts leave vital infrastructure extremely vulnerable[cite: 11].</p>
         </div>
 
-        <div class="section-title">Active Defense Layers (User-Facing)</div>
+        <div class="section-title">Active Defense Ecosystem [cite: 12]</div>
         <div class="feature-grid">
             <div class="feature-card">
                 <h4>AI Deepfake & Biometric Detector</h4>
-                <p><strong>Mechanism:</strong> A real-time AI media audit system that dissects video frames for pixel inconsistencies and unnatural audio frequencies (AI Synthesizer).</p>
-                <span class="strat-val">Strategic Value: Prevents financial loss from high-level Social Engineering, such as fraudulent AI video call instructions.</span>
+                <p>Real-time AI media audit dissecting video frames for pixel inconsistencies and unnatural audio frequencies (AI Synthesizer)[cite: 14, 15].</p>
+                <span class="val-tag">Value: Prevents financial loss from high-level Social Engineering[cite: 16].</span>
             </div>
             <div class="feature-card">
                 <h4>Satellite-Based Air-Gap Link</h4>
-                <p><strong>Mechanism:</strong> Emergency redundancy protocol via satellite links, bypassing WiFi or cellular networks by utilizing low-level radio module access.</p>
-                <span class="strat-val">Strategic Value: Ensures assets remain monitored and protected even during total cyber warfare or national blackouts.</span>
+                <p>Emergency redundancy protocol via satellite links, bypassing WiFi/cellular using low-level radio module access[cite: 18, 19].</p>
+                <span class="val-tag">Value: Monitoring during total cyber warfare or national blackouts[cite: 20].</span>
             </div>
             <div class="feature-card">
                 <h4>AI Ghost Decoy (Active Honeypot)</h4>
-                <p><strong>Mechanism:</strong> An offensive defense strategy that traps hackers in a simulated ecosystem, identifying their true IP, capturing facial data, and planting trackers.</p>
-                <span class="strat-val">Strategic Value: Provides direct intelligence on the identity and location of the attacker.</span>
+                <p>Offensive defense strategy trapping hackers in a simulated ecosystem, identifying true IP, and capturing facial data[cite: 22, 24].</p>
+                <span class="val-tag">Value: Direct intelligence on attacker identity and location[cite: 25].</span>
             </div>
             <div class="feature-card">
                 <h4>Neuro-Behavioral Lockdown</h4>
-                <p><strong>Mechanism:</strong> Passive biometric security that recognizes identity through motor profiles, including gyroscope angles, finger pressure (Newtons), and typing speed.</p>
-                <span class="strat-val">Strategic Value: Instantly detects changes in physical behavior and locks all data within seconds if the device is seized.</span>
+                <p>Passive biometric security recognizing identity through motor profiles: gyroscope angles, finger pressure, and typing speed[cite: 27, 28].</p>
+                <span class="val-tag">Value: Instantly locks all data if the device is seized[cite: 29].</span>
             </div>
         </div>
 
-        <div class="section-title">Core Architecture (Kernel Integration)</div>
+        <div class="section-title">Core System Integration [cite: 30]</div>
         <div class="feature-grid">
             <div class="feature-card">
                 <h4>Global Neural Mesh Infrastructure</h4>
-                <p>A decentralized system where every installation acts as a neural point. Attack experiences are shared instantly across the network to create automatic immunity for all users.</p>
+                <p>Decentralized system where every installation acts as a neural point, sharing attack experiences for global immunity[cite: 32, 33].</p>
             </div>
             <div class="feature-card">
                 <h4>Zero-Knowledge Proof (ZKP) Architecture</h4>
-                <p>Validates transaction security without accessing sensitive customer data, ensuring full GDPR and SOC2 compliance.</p>
+                <p>Validates transaction security without accessing sensitive data, ensuring full GDPR and SOC2 compliance[cite: 35, 36].</p>
             </div>
             <div class="feature-card">
                 <h4>Self-Healing & Quantum Vault</h4>
-                <p>Automatically repairs code if illegal modifications are detected. Encrypts data using Lattice-based algorithms impenetrable by future quantum computers.</p>
+                <p>Repairs code if modifications are detected[cite: 38]. Encrypts data with algorithms impenetrable by future quantum computers[cite: 39].</p>
             </div>
         </div>
 
-        <div class="section-title">Emergency Protocols & Recovery</div>
+        <div class="section-title">Emergency Protocols & Recovery [cite: 40]</div>
         <div class="content-box">
-            <p><strong>Digital Identity Self-Destruct:</strong> Permanent destruction of local encryption keys and global sessions if physical integrity is compromised.</p>
-            <p><strong>Quantum Recovery Shield:</strong> Post-incident recovery using fragmented Master Seed Keys, multi-layer biometric verification, and secure satellite links.</p>
+            <p><strong>Digital Identity Self-Destruct:</strong> Permanent destruction of local encryption keys and global sessions if physical integrity is compromised[cite: 42].</p>
+            <p><strong>Quantum Recovery Shield:</strong> Post-incident recovery using fragmented Master Seed Keys and multi-layer biometric verification via secure satellite links[cite: 44, 45].</p>
         </div>
 
-        <div class="section-title">Roadmap & Technical Implementation</div>
+        <div class="section-title">Roadmap & Implementation [cite: 46]</div>
         <div class="feature-grid">
-            <div class="feature-card"><h4>Phase I: Prototype</h4><p>Hybrid development using Capacitor (Mobile) and Electron (PC) cores.</p></div>
-            <div class="feature-card"><h4>Phase II: Security Audit</h4><p>Third-party penetration testing for international security certification.</p></div>
-            <div class="feature-card"><h4>Phase III: Pilot Project</h4><p>Implementation within the banking sector and government infrastructure.</p></div>
-            <div class="feature-card"><h4>Phase IV: Global Activation</h4><p>Full launch of the collective Global Neural Mesh defense network.</p></div>
+            <div class="feature-card"><h4>Phase I: Prototype</h4><p>Hybrid development using Capacitor (Mobile) and Electron (PC) cores[cite: 47].</p></div>
+            <div class="feature-card"><h4>Phase II: Security Audit</h4><p>Third-party penetration testing for international security certification[cite: 48].</p></div>
+            <div class="feature-card"><h4>Phase III: Pilot Project</h4><p>Implementation within banking sector and government infrastructure[cite: 49].</p></div>
+            <div class="feature-card"><h4>Phase IV: Global Activation</h4><p>Full launch of the collective Global Neural Mesh defense network[cite: 50].</p></div>
         </div>
 
         <section class="cta">
-            <h2 style="font-size: 2rem; margin-bottom: 10px;">Seeking Strategic Investment</h2>
-            <p style="color: var(--text-dim); margin-bottom: 40px;">VultSecure Global is opening a strategic funding round for Global Mesh activation and international expansion.</p>
-            <a href="mailto:bagas@vultsecure.com" class="btn-primary">SECURE INVESTMENT INQUIRY</a>
+            <h2 style="font-size: 2.2rem; margin-bottom: 15px;">Seeking Strategic Investment</h2>
+            <p style="color: var(--text-dim); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">VultSecure Global is opening a strategic funding round for Global Mesh activation and international expansion.</p>
+            <a href="mailto:bagas@vultsecure.com" class="btn-primary">INQUIRE FOR PARTNERSHIP</a>
         </section>
     </div>
 </body>
