@@ -1,0 +1,20 @@
+{
+  "name": "VULTSECURE INTEGRITY SUITE",
+  "short_name": "VultSecure",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#ffae00",
+  "icons": [
+    {
+      "src": "https://via.placeholder.com/192/ffae00/000000?text=V",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://via.placeholder.com/512/ffae00/000000?text=VULT",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
