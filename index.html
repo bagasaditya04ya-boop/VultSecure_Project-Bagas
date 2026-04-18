@@ -1,205 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>VultSecure Dashboard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VultSecure | Autonomous AI Defense Launch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { --vult-blue: #00f2ff; --vult-dark: #050a10; --vult-card: #0d151f; --vult-green: #39ff14; --vult-border: #1e2d3d; --vult-red: #ff003c; }
-        body { background-color: var(--vult-dark); color: #ffffff; font-family: 'Inter', sans-serif; margin: 0; padding: 0; transition: background 0.4s ease, box-shadow 0.4s ease; }
-        .app-shell { display: flex; flex-direction: column; height: 100vh; padding: 40px 25px 80px; box-sizing: border-box; }
-        .header-section span { font-size: 0.6rem; color: #5a6a7a; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; display: block; }
-        .header-section h1 { font-size: 1.8rem; margin: 0; font-weight: 700; }
-        
-        /* POIN 1: RADAR UI */
-        .radar-box { background: rgba(255,0,60,0.05); border: 1px solid var(--vult-border); padding: 12px; border-radius: 10px; margin: 20px 0 10px; display: flex; justify-content: space-between; align-items: center; }
-        .radar-label { font-size: 0.65rem; color: var(--vult-red); font-weight: 800; letter-spacing: 1px; }
-        #threat-status { font-size: 0.65rem; color: #000; background: var(--vult-green); padding: 3px 10px; border-radius: 4px; font-weight: 700; transition: all 0.3s ease; }
-
-        .score-box { display: flex; justify-content: center; margin: 10px 0 30px; }
-        .circle-ui { width: 170px; height: 170px; border-radius: 50%; border: 2px solid var(--vult-border); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; }
-        .circle-ui::after { content: ''; position: absolute; width: 100%; height: 100%; border: 2px solid transparent; border-top: 2px solid var(--vult-blue); border-radius: 50%; animation: spin 3s linear infinite; }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-        .score-big { font-size: 4rem; font-weight: 700; }
-        .verified-label { font-size: 0.6rem; color: var(--vult-green); letter-spacing: 2px; }
-        
-        .log-terminal { background: rgba(0,0,0,0.4); border: 1px solid var(--vult-border); border-radius: 12px; padding: 15px; font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--vult-blue); height: 110px; overflow-y: auto; margin-bottom: 20px; border-left: 3px solid var(--vult-blue); }
-        .btn-blue { background: var(--vult-blue); color: #000; border: none; padding: 18px; border-radius: 12px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; width: 100%; margin-bottom: 12px; cursor: pointer; }
-        .btn-outline { background: transparent; border: 1px solid var(--vult-border); color: #fff; padding: 15px; border-radius: 12px; font-weight: 600; font-size: 0.7rem; text-transform: uppercase; width: 100%; cursor: pointer; margin-bottom: 10px; }
-        
-        .audit-card { background: var(--vult-card); border: 1px solid var(--vult-border); border-radius: 15px; padding: 18px; margin-bottom: 12px; cursor: pointer; }
-        .audit-card h4 { margin: 0; font-size: 1rem; color: var(--vult-blue); }
-        .audit-card p { margin: 5px 0 0; font-size: 0.6rem; color: #5a6a7a; }
-        
-        .nav-bar { position: fixed; bottom: 0; left: 0; width: 100%; height: 70px; background: #0a1118; border-top: 1px solid var(--vult-border); display: flex; justify-content: space-around; align-items: center; }
-        .nav-item { font-size: 0.6rem; color: #444; font-weight: 700; text-transform: uppercase; }
-        .nav-item.active { color: var(--vult-blue); }
-        .hidden { display: none !important; }
+        :root { --primary: #ff6154; --dark: #0b0e14; --glass: rgba(255, 255, 255, 0.05); }
+        body { background: var(--dark); color: white; font-family: 'Inter', sans-serif; margin: 0; padding-bottom: 100px; }
+        nav { padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--glass); }
+        .logo { font-weight: 900; letter-spacing: -1px; font-size: 1.5rem; color: #fff; }
+        .logo span { color: var(--primary); }
+        .container { max-width: 900px; margin: 60px auto; padding: 0 20px; }
+        .launch-card { background: var(--glass); border: 1px solid #2d313f; border-radius: 16px; padding: 40px; display: flex; gap: 30px; align-items: flex-start; position: relative; }
+        .product-icon { width: 100px; height: 100px; background: linear-gradient(135deg, #00f2ff, #004a99); border-radius: 20px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 3rem; font-weight: 900; box-shadow: 0 10px 30px rgba(0,242,255,0.3); }
+        .content h1 { margin: 0; font-size: 2.2rem; font-weight: 900; }
+        .tagline { color: #8a99a8; font-size: 1.2rem; margin: 10px 0; }
+        .tags { display: flex; gap: 10px; margin-top: 15px; }
+        .tag { background: #1e222d; padding: 5px 12px; border-radius: 6px; font-size: 0.75rem; color: #cbd5e1; border: 1px solid #334155; }
+        .upvote-btn { border: 1px solid #334155; border-radius: 12px; padding: 15px 25px; cursor: pointer; display: flex; flex-direction: column; align-items: center; transition: 0.3s; background: transparent; color: white; }
+        .upvote-btn:hover { border-color: var(--primary); background: rgba(255,97,84,0.1); }
+        .desc-section { margin-top: 40px; line-height: 1.8; color: #cbd5e1; font-size: 1.1rem; }
+        .highlight { color: #fff; font-weight: 600; border-bottom: 2px solid var(--primary); }
+        .cta-box { margin-top: 50px; background: linear-gradient(90deg, #1e222d, #0b0e14); padding: 30px; border-radius: 12px; text-align: center; border: 1px dashed #475569; }
+        .btn-main { background: var(--primary); color: white; padding: 18px 40px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; }
     </style>
 </head>
 <body>
-<div class="app-shell">
-    <div id="view-home">
-        <div class="header-section"><span>VULTSECURE_PERSONAL</span><h1>Guardian Dashboard</h1></div>
-        
-        <div class="radar-box">
-            <span class="radar-label">PREDICTIVE THREAT RADAR</span>
-            <span id="threat-status">INITIALIZING...</span>
-        </div>
-
-        <div class="score-box">
-            <div class="circle-ui">
-                <div class="score-big" id="score-display">100</div>
-                <div class="verified-label">VERIFIED</div>
+    <nav>
+        <div class="logo">VULT<span>SECURE</span></div>
+        <div style="font-size: 0.8rem; color: #4ade80;">● SYSTEM ONLINE</div>
+    </nav>
+    <div class="container">
+        <div class="launch-card">
+            <div class="product-icon">V</div>
+            <div class="content">
+                <h1>VultSecure OS</h1>
+                <p class="tagline">The First Local-Edge AI Cyber Defense System.</p>
+                <div class="tags">
+                    <span class="tag">🛡️ SECURITY</span>
+                    <span class="tag">🤖 LOCAL AI</span>
+                    <span class="tag">🛰️ SATELLITE</span>
+                </div>
+            </div>
+            <div class="upvote-btn">
+                <span style="font-size: 0.8rem;">▲</span>
+                <span style="font-size: 1.2rem; font-weight: 900;">524</span>
             </div>
         </div>
-
-        <div class="log-terminal" id="home-logs">
-            > VultOS Kernel Booting...<br>
-            > Predictive AI Radar: ONLINE...
+        <div class="desc-section">
+            <p>Bosan dengan keamanan standar? <span class="highlight">VultSecure</span> memperkenalkan era baru pertahanan otonom dengan AI lokal.</p>
         </div>
-
-        <button class="btn-blue" onclick="switchTab('audit')">OPEN SECURITY AUDIT</button>
-        <button class="btn-outline" onclick="downloadReport()">GENERATE FORMAL AUDIT PDF</button>
-        <button class="btn-outline" style="border-color: var(--vult-red); color: var(--vult-red);" onclick="triggerAirGap()">ACTIVATE AIR-GAP SOS</button>
-        
-        <button class="btn-outline" style="font-size: 0.5rem; opacity: 0.3; border: none;" onclick="simulateBiometricFail()">[DEBUG: SIMULATE BYPASS ATTEMPT]</button>
+        <div class="cta-box">
+            <h3>Tertarik menjadi mitra atau investor?</h3>
+            <a href="mailto:bagas@vultsecure.com" class="btn-main">HUBUNGI FOUNDER (BAGAS)</a>
+            <p style="margin-top: 20px; font-size: 0.8rem;">
+                <a href="https://github.com/bagasaditya04ya-boop/VultSecure_Project" style="color: #60a5fa; text-decoration: none;">View Technical Repository on GitHub →</a>
+            </p>
+        </div>
     </div>
-
-    <div id="view-audit" class="hidden">
-        <div class="header-section"><h1>Security Audit</h1></div>
-        <div class="audit-card" onclick="runAudit('BANK_FRAUD_DIAGNOSTIC')">
-            <h4>Bank Fraud Diagnostic</h4>
-            <p>Audit AI lokal & global untuk ancaman Deepfake.</p>
-        </div>
-        <div class="audit-card" onclick="runAudit('DEEP_IDENTITY_SCAN')">
-            <h4>Deep Identity Scan</h4>
-            <p>Check kebocoran data KTP & Email di pasar gelap.</p>
-        </div>
-        <div class="audit-card" onclick="runAudit('PRIVACY_DATA_SCAN')">
-            <h4>Privacy & Metadata Scan</h4>
-            <p>Deteksi aplikasi penguping & audit metadata file.</p>
-        </div>
-        <button class="btn-outline" onclick="switchTab('home')">BACK TO DASHBOARD</button>
-    </div>
-</div>
-
-<div class="nav-bar">
-    <div class="nav-item active" id="nav-home" onclick="switchTab('home')">HOME</div>
-    <div class="nav-item" id="nav-audit" onclick="switchTab('audit')">AUDIT</div>
-</div>
-
-<script>
-    const SERVER_IP = "192.168.1.5";
-
-    function switchTab(t) { 
-        document.getElementById('view-home').classList.toggle('hidden', t!=='home');
-        document.getElementById('view-audit').classList.toggle('hidden', t!=='audit');
-        document.getElementById('nav-home').classList.toggle('active', t==='home');
-        document.getElementById('nav-audit').classList.toggle('active', t==='audit');
-    }
-
-    // POIN 1: UPDATE RADAR OTOMATIS
-    async function updateRadar() {
-        try {
-            const res = await fetch(`http://${SERVER_IP}:3000/threat-radar`);
-            const data = await res.json();
-            const label = document.getElementById('threat-status');
-            label.innerText = `${data.status} (${data.score}%)`;
-            
-            if(data.score > 70) {
-                label.style.background = "var(--vult-red)";
-                document.body.style.boxShadow = "inset 0 0 60px rgba(255,0,60,0.2)";
-            } else if(data.score > 35) {
-                label.style.background = "orange";
-            } else {
-                label.style.background = "var(--vult-green)";
-                document.body.style.boxShadow = "none";
-            }
-        } catch (e) {}
-    }
-    setInterval(updateRadar, 5000);
-
-    async function runAudit(a) {
-        const logs = document.getElementById('home-logs'); 
-        switchTab('home');
-        logs.innerHTML += `<br>> Initiating ${a}...`;
-        try {
-            const res = await fetch(`http://${SERVER_IP}:3000/execute`, { 
-                method: 'POST', 
-                headers: {'Content-Type':'application/json'}, 
-                body: JSON.stringify({action: a}) 
-            });
-            const data = await res.json();
-            logs.innerHTML += `<br><span style="color:var(--vult-green)">> AI: ${data.ai_respond}</span>`;
-            logs.scrollTop = logs.scrollHeight;
-        } catch (e) {
-            logs.innerHTML += `<br><span style="color:var(--vult-red)">> ERROR: Server Unreachable!</span>`;
-        }
-    }
-
-    function downloadReport() { 
-        const logs = document.getElementById('home-logs');
-        logs.innerHTML += `<br>> Compiling Formal Audit Report...`;
-        window.location.href = `http://${SERVER_IP}:3000/download-pdf`; 
-    }
-
-    // POIN 2: MULTI-NODE SATELLITE LOGIC
-    async function triggerAirGap() {
-        const logs = document.getElementById('home-logs');
-        logs.innerHTML += `<br><span style="color:var(--vult-red)">> SOS: Internet Lost! Connecting Satellite...</span>`;
-        try {
-            const res = await fetch(`http://${SERVER_IP}:3000/emergency-satellite`, { 
-                method: 'POST', 
-                headers: {'Content-Type':'application/json'}, 
-                body: JSON.stringify({status: "SOS_ACTIVE", location: "ID-West-Jakarta-Node"}) 
-            });
-            const data = await res.json();
-            logs.innerHTML += `<br><span style="color:var(--vult-blue)">> [SATELLITE]: ${data.connection}</span>`;
-            logs.innerHTML += `<br>> Region: ${data.region} | Node: ${data.node}`;
-            logs.scrollTop = logs.scrollHeight;
-        } catch (e) {
-            logs.innerHTML += `<br><span style="color:var(--vult-red)">> ERROR: Satellite Handshake Failed!</span>`;
-        }
-    }
-
-    // POIN 3: BIOMETRIC TRAP SIMULATOR
-    async function simulateBiometricFail() {
-        const logs = document.getElementById('home-logs');
-        logs.innerHTML += `<br><span style="color:var(--vult-red)">> CRITICAL: Fingerprint Mismatch!</span>`;
-        try {
-            const res = await fetch(`http://${SERVER_IP}:3000/biometric-trap`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ deviceId: "VULT-PHONE-01", attemptCount: 3 })
-            });
-            const data = await res.json();
-            document.body.style.backgroundColor = "maroon";
-            setTimeout(() => document.body.style.backgroundColor = "var(--vult-dark)", 400);
-            logs.innerHTML += `<br><span style="color:var(--vult-red)">> ALERT: GPS TAGGED @ ${data.gps_tag}</span>`;
-            alert("SYSTEM LOCK: Unauthorized access attempt recorded.");
-        } catch (e) {}
-    }
-
-    window.addEventListener('deviceorientation', (e) => {
-        const angle = Math.abs(e.beta);
-        if (angle > 75) { 
-            fetch(`http://${SERVER_IP}:3000/sensor-audit`, { 
-                method: 'POST', 
-                headers: {'Content-Type':'application/json'}, 
-                body: JSON.stringify({angle: angle}) 
-            })
-            .then(r => r.json())
-            .then(d => { 
-                if(d.status === "LOCKDOWN") { 
-                    document.body.style.backgroundColor = "var(--vult-red)"; 
-                    document.getElementById('score-display').innerText = "00";
-                    document.getElementById('home-logs').innerHTML += `<br><span style="color:white">! ALARM: ${d.message}</span>`;
-                }
-            }).catch(err => {});
-        }
-    });
-</script>
 </body>
 </html>
