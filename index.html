@@ -26,6 +26,7 @@
             -webkit-font-smoothing: antialiased;
         }
         
+        /* HEADER - NAVIGASI */
         nav { 
             padding: 15px 5%; 
             display: flex; 
@@ -38,16 +39,19 @@
             z-index: 100; 
         }
         
+        /* LOGO KUSTOM LO YANG ADA DI GAMBAR (⚛️) */
         .logo-box { 
             display: flex; 
             align-items: center; 
             gap: 12px; 
             font-weight: 900; 
             font-size: 1.5rem; 
+            letter-spacing: -1px; 
         }
 
+        /* Ikon sirkuit '⚛️' kustom sesuai gambar lo */
         .vult-custom-logo-icon {
-            font-size: 2.2rem; 
+            font-size: 2.2rem; /* Ukuran sirkuit atom buatan lo */
             color: var(--white-bright);
             filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
             flex-shrink: 0;
@@ -57,6 +61,7 @@
 
         .container { max-width: 900px; margin: 20px auto; padding: 0 20px; }
         
+        /* HERO SECTION (MENGGUNAKAN LOGO LENGKAP) */
         .hero { 
             background: var(--navy-dark);
             padding: 80px 20px; 
@@ -66,6 +71,7 @@
             border: 1px solid var(--glass);
         }
 
+        /* Logo Lengkap di Hero: Ikon (⚛️) + Teks */
         .hero-logo-giant { 
             display: flex; 
             justify-content: center; 
@@ -90,6 +96,7 @@
         .card { background: var(--glass); border: 1px solid var(--glass); padding: 30px; border-radius: 16px; margin-bottom: 20px; }
         .card p { margin: 0; }
         
+        /* FEATURE GRID - ANTI BUG DI HP */
         .feature-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
@@ -108,6 +115,7 @@
         .f-card p { color: var(--text-dim); font-size: 0.95rem; margin: 0; }
         .strat-val { display: block; margin-top: 15px; font-size: 0.75rem; color: #4ade80; font-weight: 700; border-top: 1px dashed #334155; padding-top: 10px; }
 
+        /* CTA BOX */
         .cta-box { 
             background: var(--navy-dark); 
             border: 2px solid var(--white-bright); 
@@ -127,6 +135,7 @@
             display: inline-block;
         }
 
+        /* MOBILE FIX */
         @media (max-width: 600px) {
             nav { padding: 15px 4%; }
             .hero-logo-giant { flex-wrap: wrap; justify-content: center; transform: scale(0.8); }
@@ -137,6 +146,7 @@
             .vult-custom-logo-icon { font-size: 1.8rem; }
             .container { padding: 0 15px; }
             .card { padding: 20px; }
+            .cta-box { padding: 40px 15px; }
         }
     </style>
 </head>
@@ -158,55 +168,70 @@
             </div>
             <h1>Digital DNA Protection</h1>
             <p>Enterprise & Financial Grade v1.0.0 — Global Strategic Solution</p>
+            <div style="margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+                <span style="background:var(--bg-deep); padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; border:1px solid #334155;"> RAHASIA: SANGAT RAHASIA</span>
+            </div>
         </header>
 
         <div class="section-title">Executive Summary</div>
         <div class="card">
-            <p><strong>Visi Perusahaan:</strong> VultSecure hadir sebagai solusi definitif atas kerentanan infrastruktur digital global. Di tengah meningkatnya ancaman serangan siber AI dan komputasi kuantum, VultSecure menjadi "Digital DNA" yang menyatu dengan inti sistem perbankan untuk memberikan perlindungan mutlak.</p>
+            <p><strong>Visi Perusahaan:</strong> VultSecure hadir sebagai solusi definitif atas kerentanan infrastruktur digital global. Di tengah meningkatnya ancaman serangan siber AI dan komputasi kuantum, VultSecure menjadi "Digital DNA" yang menyatu dengan inti sistem perbankan dan data berisiko tinggi untuk memberikan perlindungan mutlak.</p>
         </div>
         <div class="card">
-            <p><strong>Problem Statement:</strong> Sistem keamanan konvensional bersifat reaktif. Ancaman modern seperti Deepfake Fraud, serangan Zero-Day, dan Internet Blackout membuat infrastruktur vital sangat rentan.</p>
+            <p><strong>Problem Statement:</strong> Sistem keamanan konvensional saat ini bersifat reaktif dan sangat bergantung pada internet. Ancaman modern seperti Deepfake Fraud, serangan Zero-Day, dan Internet Blackout nasional membuat infrastruktur vital sangat rentan.</p>
         </div>
 
-        <div class="section-title">Active Defense Layers</div>
+        <div class="section-title">Layer Pertahanan Aktif (User-Facing)</div>
         <div class="feature-grid">
             <div class="f-card">
-                <h4>AI Deepfake Detector</h4>
-                <p>Audit media real-time untuk memvalidasi komunikasi audio/visual. Membedah frame video untuk mencari inkonsistensi piksel (AI Synthesizer).</p>
+                <h4>AI Deepfake & Biometric Detector</h4>
+                <p>Audit media real-time berbasis AI yang membypass API untuk memvalidasi integritas komunikasi audio/visual. Membedah frame video untuk mencari inkonsistensi piksel dan frekuensi suara manipulatif (AI Synthesizer).</p>
                 <span class="strat-val">Nilai Strategis: Mencegah kerugian finansial akibat Social Engineering tingkat tinggi.</span>
             </div>
             <div class="f-card">
-                <h4>Satellite Air-Gap Link</h4>
-                <p>Protokol redundansi darurat via satelit, membypass jaringan WiFi/seluler menggunakan akses low-level radio module.</p>
-                <span class="strat-val">Nilai Strategis: Aset tetap terlindungi saat internet blackout nasional.</span>
+                <h4>Satellite-Based Air-Gap Link</h4>
+                <p>Protokol redundansi darurat via satelit, membypass jaringan WiFi/seluler menggunakan akses low-level radio module untuk transmisi paket terenkripsi.</p>
+                <span class="strat-val">Nilai Strategis: Proteksi tetap aktif saat terjadi internet blackout nasional atau perang siber total.</span>
             </div>
             <div class="f-card">
-                <h4>AI Ghost Decoy</h4>
-                <p>Pertahanan ofensif menjebak peretas ke ekosistem simulasi untuk identifikasi IP asli dan penangkapan data wajah.</p>
-                <span class="strat-val">Nilai Strategis: Intelijen langsung mengenai identitas penyerang.</span>
+                <h4>AI Ghost Decoy (Active Honeypot)</h4>
+                <p>Strategi pertahanan ofensif menjebak peretas ke ekosistem simulasi. Mengidentifikasi IP asli, menangkap data wajah pelaku, dan menanamkan pelacak balik.</p>
+                <span class="strat-val">Nilai Strategis: Memberikan intelijen langsung mengenai identitas dan lokasi penyerang.</span>
             </div>
             <div class="f-card">
                 <h4>Neuro-Behavioral Lockdown</h4>
-                <p>Biometric pasif mengenali identitas melalui profil motorik (tekanan jari & kecepatan mengetik unik).</p>
-                <span class="strat-val">Nilai Strategis: Mengunci data otomatis jika perangkat dirampas fisik.</span>
+                <p>Biometric pasif mengenali identitas melalui profil motorik individu pengguna ( sensor giroskop & tekanan jari dalam Newton).</p>
+                <span class="strat-val">Nilai Strategis: Mendeteksi perilaku fisik yang berubah secara instan dan mengunci data otomatis jika perangkat dirampas fisik.</span>
             </div>
         </div>
 
-        <div class="section-title">Core System Integration</div>
+        <div class="section-title">Arsitektur Inti (Kernel Integration)</div>
         <div class="feature-grid">
             <div class="f-card">
-                <h4>Global Neural Mesh</h4>
-                <p>Sistem desentralisasi di mana setiap instalasi berbagi pengalaman serangan untuk imunitas otomatis seluruh jaringan.</p>
+                <h4>Global Neural Mesh Infrastructure</h4>
+                <p>Sistem desentralisasi di mana setiap instalasi bertindak sebagai titik saraf aktif. Pengalaman serangan dibagikan instan ke seluruh jaringan untuk menciptakan imunitas otomatis seluruh pengguna.</p>
             </div>
             <div class="f-card">
-                <h4>Quantum-Resistant Vault</h4>
-                <p>Enkripsi algoritma Lattice-based yang dirancang mutlak tidak dapat ditembus oleh komputer kuantum masa depan.</p>
+                <h4>Zero-Knowledge Proof (ZKP) Architecture</h4>
+                <p>Memvalidasi keamanan sebuah transaksi tanpa perlu melihat isi data sensitif nasabah, memastikan kepatuhan penuh terhadap regulasi privasi GDPR dan SOC2.</p>
             </div>
+            <div class="f-card">
+                <h4>Self-Healing Kernel & Quantum Vault</h4>
+                <p>Core code memperbaiki kodenya sendiri jika terdeteksi modifikasi ilegal oleh malware. Enkripsi algoritma Lattice-based (Quantum-Resistant) yang tidak dapat ditembus komputer kuantum.</p>
+            </div>
+        </div>
+
+        <div class="section-title">Roadmap Strategis & Implementasi</div>
+        <div class="feature-grid">
+            <div class="f-card" style="text-align:center;"><h4>Phase I: Prototype & MVP</h4><p>Pengembangan inti Capacitor (Mobile) dan Electron (PC).</p></div>
+            <div class="f-card" style="text-align:center;"><h4>Phase II: Security Audit</h4><p>Audit penetrasi pihak ketiga untuk sertifikasi internasional.</p></div>
+            <div class="f-card" style="text-align:center;"><h4>Phase III: Pilot Project</h4><p>Implementasi pada perbankan dan pemerintah.</p></div>
+            <div class="f-card" style="text-align:center;"><h4>Phase IV: Global Activation</h4><p>Peluncuran penuh jaringan pertahanan kolektif Global Neural Mesh.</p></div>
         </div>
 
         <section class="cta-box">
-            <h2 style="font-size: 2.2rem; margin-bottom: 20px;">Strategic Investment Round</h2>
-            <p style="margin-bottom: 40px; color: var(--text-dim);">VultSecure Global sedang membuka putaran pendanaan untuk aktivasi jaringan Global Mesh internasional.</p>
+            <h2 style="font-size: 1.8rem; margin: 0 0 15px 0;">Strategic Investment Opportunity</h2>
+            <p style="margin-bottom: 30px; color: var(--text-dim);">VultSecure Global sedang membuka putaran pendanaan strategis untuk aktivasi Global Mesh internasional.</p>
             <a href="mailto:bagas@vultsecure.com" class="btn-white">INQUIRE FOR PARTNERSHIP</a>
         </section>
     </div>
